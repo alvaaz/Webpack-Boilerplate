@@ -1,0 +1,58 @@
+extends _skeleton
+include _mixins
+
+append config
+	-pageTitle = 'Jumpitt'
+
+block content
+	body.loader-dot
+		#page-loader
+			span.loader-icon
+		#page-content
+			block header
+				include blocks/_header
+			#hero-and-body
+				section#hero.hero-fullscreen.content-overlay(style="background:url(images/parallaxbg.svg) center center; background-size:cover;")
+					#page-title.title-center
+						h1
+							strong In
+							br
+							| Jumpitt
+							br
+							| we think different
+					a#scrolldown.left.icon-text(href='#')
+						span.scroll-icon
+						span.text Desliza hacia abajo
+				section#page-body
+					#portfolio-grid.isotope-grid.isotope-spaced-huge.style-column-2.offset-ultra.portfolio-container(data-ratio='1:1')
+						each project in projects
+							div(class='isotope-item portfolio-item ' + project['categories'] + '')
+								.portfolio-item-inner.item-inner
+									.portfolio-media.do-anim-modern
+										a.thumb-hover.no-overlay.scale(href='' + project['src'] + '.html')
+											video(poster='', autoplay='autoplay', loop='loop', muted='muted', playsinline='playsinline')
+												source(src='images/' + project['src'] + '.webm', type='video/webm')
+												source(src='images/' + project['src'] + '.ogg', type='video/ogg')
+												source(src='images/' + project['src'] + '.mp4', type='video/mp4')
+												your browser does not support the video tag.
+									.portfolio-info.do-anim
+										span.portfolio-category= project['categories']
+										h4.portfolio-name
+											a(href='' + project['src'] + '.html')
+												strong= project['title']
+					.spacer-big
+					.fullwidth-section.text-light.forcefullwidth.bigpadding(style='background-color:#1c1c1c')
+						.fullwidth-content
+							.column-section.clearfix.spaced-big
+								.column.one-third
+									img(src='images/600x600.jpg', alt='SEO')
+								.column.two-third.last-col
+									.col-content
+										h4.title-alt.align-auto
+											strong Jumpitt es una unidad estratégica de negocio del Grupo Sable.
+										.spacer-small
+										p.h4(style='font-family: Overpass, sans-serif; font-size: 1rem;')
+											| Grupo Sable apuesta a crear valor bajo unidades de negocio autónomas, articuladas por una estrategia común. Se dedica a descubrir, desarrollar y operar emprendimientos innovadores en diferentes industrias, promoviendo la colaboración y sinergia entre sus unidades de negocios así como la búsqueda de alianzas estratégicas con otras entidades. Su desafío radica en emprender, aportar valor, desarrollar, hacer empresa, y trabajar con el objetivo de dejar una huella positiva desde un prisma joven e innovador.
+										.spacer-small
+										p
+											img(src='images/example-logos-big-2-light.png', alt='SEO', srcset='images/example-logos-big-2-light.png 1x, images/example-logos-big-2-light@2x.png 2x')

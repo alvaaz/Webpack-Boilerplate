@@ -1,0 +1,107 @@
+body {
+    font-family: 'Overpass', sans-serif;
+}
+
+.header {
+    color: white;
+    &__title {
+        font-weight: $light;
+        font-size: 4rem;
+        line-height: 4rem;
+        @media screen and (min-width: 40em) {
+            font-size: 4rem;
+            line-height: 5rem;
+        }
+    }
+    &__subtitle {
+        font-family: 'Overpass', sans-serif;
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+        font-weight: $light;
+        @media screen and (min-width: 40em) {
+            font-size: 1.4rem;
+            line-height: 2rem;
+        }
+    }
+}
+
+.menu {
+    &__nav-item {
+        font-family: 'Overpass', sans-serif;
+        text-decoration: none;
+        font-weight: 400;
+        font-size: 2rem;
+        color: $dark-gray;
+    }
+    &__section {
+        font-family: 'Overpass Mono', monospace;
+        text-transform: uppercase;
+        font-size: 1rem;
+        color: $gray;
+        font-weight: 700;
+        letter-spacing: 0.2rem;
+    }
+    &__location-name {
+        font-family: 'Overpass', sans-serif;
+        font-weight: 300;
+        font-size: 1.6rem;
+        color: $dark-gray;
+    }
+    &__location-detail {
+        color: rgba($color: $dark-gray, $alpha: 0.5);
+        font-family: 'Overpass Mono', monospace;
+        font-weight: 300;
+        font-size: 1rem;
+    }
+}
+
+.main {
+    &__title {
+        font-weight: $thin;
+        font-size: 2rem;
+        text-align: center;
+        color: $dark-blue;
+    }
+    &__light {
+        font-weight: $light;
+    }
+    &__projects {
+        .project__title {
+            font-weight: $light;
+            color: $dark-blue;
+            font-family: 'Overpass Mono', monospace;
+            font-size: 1rem;
+            @media screen and (min-width: 40em) {
+                font-size: 1.4rem;
+            }
+        }
+        .project__description {
+            font-size: 1.2rem;
+            color: #9B9B9B;
+            letter-spacing: 0;
+            line-height: 32px;
+        }
+    }
+}
+
+.aside {
+    text-align: center;
+    &__title {
+        font-weight: $thin;
+        font-size: 2rem;
+        text-align: center;
+        color: $dark-blue;
+    }
+}
+
+.footer {
+    & .copyright {
+        color: #B0ADFF;
+        font-size: 1rem;
+    }
+    & .hello-jumpitt {
+        font-weight: $bold;
+        color: white;
+        font-size: 1rem;
+    }
+}

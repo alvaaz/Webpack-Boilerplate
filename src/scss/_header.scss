@@ -1,0 +1,80 @@
+.header {
+    margin-right: auto;
+    margin-left: auto;
+    height: 88vh;
+    @media screen and (min-width: 40em) {
+        height: 86vh;
+    }
+    &__nav {
+        position: fixed;
+        right: 4vw;
+        z-index: 13;
+        display: flex;
+        justify-content: flex-end;
+        padding-top: 3vh;
+        @media screen and (min-width: 40em){
+            right: 16vw;
+        }
+    }
+    &__hero {
+        padding-top: 8vh;
+        @media screen and (min-width: 40em) {
+            padding-top: 32vh;
+        }
+    }
+    &__scroll {
+        width: 1.5rem;
+        height: 3rem;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        @media screen and (min-width: 40em){
+            width: 2rem;
+            height: 4rem;
+        }
+    }
+    &__title {
+        padding-left: 4vw;
+        width: 50vw;
+        @media screen and (min-width: 40em){
+            padding-left: 16vw;
+        }
+    }
+    &__subtitle {
+        padding-top: 4vh;
+        margin-bottom: 8vh;
+        padding-left: 4vw;
+        width: 70vw;
+        @media screen and (min-width: 40em){
+            padding-left: 16vw;
+            width: 34vw;
+        }
+    }
+}
+
+.sticky__nav{
+    clip-path: circle(200vw at 50vw 200vw);
+    position: sticky;
+    z-index: 10;
+    transition: 1s all ease-in-out;
+    height: 14vh;
+    width: 100vw;
+    background-color: white;
+    text-align: center;
+    padding-top: 2vh;
+    left: 0;
+    & img {
+        height: 2.8rem;
+        transition: .6s all ease-in-out;
+    }
+}
+
+.sticky {
+    clip-path: circle(230vw at 50vw 200vw);
+    top: 0;
+    height: 8vh;
+    background-color: white;
+    & img {
+        height: 2.4rem;
+    }
+}

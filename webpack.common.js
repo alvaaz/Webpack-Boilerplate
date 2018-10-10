@@ -17,14 +17,27 @@ const fileLoader = {
     test: /\.(png|svg|jpg|gif)$/,
     use: [
         {
-            loader: 'file-loader'
+            loader: 'file-loader',
+            options: {
+                name: "images/[name].[ext]"
+            }
         }
     ]
 }
 
 const pug = {
     test: /\.pug$/,
-    use: ['html-loader?attrs=false', 'pug-html-loader']
+    use: [
+        {
+            loader: 'html-loader',
+            options: {
+                attrs: ["img:src"]
+            }
+        },
+        {
+            loader: 'pug-html-loader'
+        }
+    ]
 }
 
 const config  = {

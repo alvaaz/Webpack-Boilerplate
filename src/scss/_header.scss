@@ -2,24 +2,24 @@
     margin-right: auto;
     margin-left: auto;
     height: 88vh;
+    background: $dark-blue url("./img/parallaxbg.svg") repeat scroll center center / cover;
     @media screen and (min-width: 40em) {
         height: 86vh;
+        padding-right: 4vw;
+        padding-left: 4vw;
     }
     &__nav {
-        position: fixed;
-        right: 4vw;
+        position: relative;
         z-index: 13;
         display: flex;
-        justify-content: flex-end;
-        padding-top: 3vh;
-        @media screen and (min-width: 40em){
-            right: 16vw;
-        }
+        justify-content: space-between;
+        padding-top: 8vh;
     }
     &__hero {
         padding-top: 8vh;
+        background-color: $dark-blue;
         @media screen and (min-width: 40em) {
-            padding-top: 32vh;
+            padding-top: 8vh;
         }
     }
     &__scroll {
@@ -34,47 +34,69 @@
         }
     }
     &__title {
-        padding-left: 4vw;
         width: 50vw;
-        @media screen and (min-width: 40em){
-            padding-left: 16vw;
-        }
+    }
+    &__logo {
+        width: 4em;
+        height: auto;
     }
     &__subtitle {
         padding-top: 4vh;
         margin-bottom: 8vh;
-        padding-left: 4vw;
         width: 70vw;
         @media screen and (min-width: 40em){
-            padding-left: 16vw;
-            width: 34vw;
+            width: 50vw;
         }
     }
 }
 
-.sticky__nav{
-    clip-path: circle(200vw at 50vw 200vw);
-    position: sticky;
-    z-index: 10;
-    transition: 1s all ease-in-out;
-    height: 14vh;
-    width: 100vw;
-    background-color: white;
-    text-align: center;
-    padding-top: 2vh;
-    left: 0;
-    & img {
-        height: 2.8rem;
-        transition: .6s all ease-in-out;
+#scrolldown {
+    position: relative;
+    transition: all 0.3s ease;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 20px;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    box-sizing: content-box;
+    &:hover {
+        opacity: 0.45;
+    }
+    .scroll-icon{
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 1.5px solid #000000;
+        width: 12px;
+        height: 18px;
+        border-radius: 8px;border-color: #ffffff;
+        transition: all 0.3s ease;
+        &:after {
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: 4.5px;
+            width: 3px;
+            height: 3px;
+            border-radius: 6px;
+            background: #ffffff;;
+            animation: scrolldown-anim 1.8s infinite ease;
+        }
     }
 }
 
-.sticky {
-    clip-path: circle(230vw at 50vw 200vw);
-    top: 0;
-    height: 8vh;
-    background-color: white;
-    & img {
-        height: 2.4rem;
-    }
+#scrolldown:not(.center) .scroll-icon + span.text {
+    padding-left: 25px;
 }
+
+
+@keyframes scrolldown-anim {
+    40% {
+        top: 5px; }
+    75% {
+        top: 10px; }
+    100% {
+        top: 5px; }
+}
+

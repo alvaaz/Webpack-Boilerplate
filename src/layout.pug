@@ -5,27 +5,9 @@ html
     link(href="https://fonts.googleapis.com/css?family=Overpass+Mono:300,700" rel="stylesheet")
     title Jumpittlabs
   body
-    .menu#menu
-      h4.menu__section Menu
-      nav.menu__nav
-          a.menu__nav-item(href="") Nosotros
-          a.menu__nav-item(href="") Proyectos
-          a.menu__nav-item(href="") Qué hacemos
-          a.menu__nav-item(href="") Contáctanos
-      h4.menu__section Oficina
-      .menu__location
-          h2.menu__location-name Valparaíso
-          span.menu__location-detail Avenida Errázuriz 755 oficina 603
-      .menu__location
-          h2.menu__location-name Valparaíso
-          span.menu__location-detail Avenida Errázuriz 755 oficina 603
-      .menu__footer
-          a(href="")
-              img.menu__link(src="./img/ic-facebook.svg", alt="Logo de Facebook")
-          a(href="")
-              img.menu__link(src="./img/ic-behance.svg", alt="Logo de Behance")
-
+    block menu
+        include blocks/_menu
     block header
-      include blocks/_header
+        include blocks/_header
     block content
     block footer

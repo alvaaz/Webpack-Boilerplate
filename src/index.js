@@ -2,7 +2,7 @@ import gql from 'graphql-tag'
 import ApolloClient from 'apollo-boost';
 
 const client = new ApolloClient({
-    uri: 'https://api-useast.graphcms.com/v1/cjn39wlms2lf301g5rhj19k0s/master'
+    // uri: 'https://api-useast.graphcms.com/v1/cjn39wlms2lf301g5rhj19k0s/master'
 })
 
 import './style.scss'
@@ -38,9 +38,7 @@ function tabla(datos) {
     contenido.innerHTML += `
     <article class="main__projects--article">
       <figure class="main__project">
-        <video poster="https://media.graphcms.com/${element.images[0].handle}" autoplay="autoplay" loop="loop" muted="muted" playsinline="1">
-          <source id="video" src="https://media.graphcms.com/${element.coverImage.handle}" type="video/webm"/>
-          <Your>browser does not support the video tag.</Your>
+        <video src="https://media.graphcms.com/${element.coverImage.handle}" poster="https://media.graphcms.com/${element.images[0].handle}" autoplay loop playsinline>
         </video>
       </figure>
       <div class="description">
@@ -52,16 +50,11 @@ function tabla(datos) {
   });
 }
 
+const menu = document.getElementById("menu"),
+    header = document.querySelector('header')
 
-const main = document.querySelector(".sticky__nav"),
-    el = document.getElementById('menuButton'),
-    menuButton = document.getElementById("menuButton"),
-    menu = document.getElementById("menu")
+document.querySelector('.menu-toggle').addEventListener('click', function(){
+  menu.classList.toggle("is-open")
+  header.classList.toggle('menu-is-open')
 
-el.onclick = function() {
-    el.classList.toggle('is-menu-open');
-}
-
-menuButton.addEventListener("click", function(){
-    menu.classList.toggle("is-open")
 })

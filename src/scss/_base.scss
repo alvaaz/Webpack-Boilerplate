@@ -1,0 +1,54 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body {
+    box-sizing: border-box;
+}
+
+.btn {
+    background-color: white;
+    box-shadow: 0 12px 8px -8px rgba(0,0,0,0.15);
+    border-radius: 16px;
+    border: none;
+    font-size: 1rem;
+    font-family: 'Overpass';
+    font-weight: 300;
+    color: #292676;
+    padding: 1rem 2.4rem 1rem 1rem;
+    cursor: pointer;
+    position: relative;
+    height: 4rem;
+    line-height: 2rem;
+    transition: all .4s ease-in-out;
+    &:after {
+        content: '';
+        background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIxNnB4IiBoZWlnaHQ9IjE2cHgiIHZpZXdCb3g9IjAgMCAxNiAxNiIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4gICAgICAgIDx0aXRsZT5TaGFwZTwvdGl0bGU+ICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPiAgICA8ZGVmcz48L2RlZnM+ICAgIDxnIGlkPSJTeW1ib2xzIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4gICAgICAgIDxnIGlkPSJpYy9hcnJvd19mb3J3YXJkL3ByaW1hcnkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC00LjAwMDAwMCwgLTQuMDAwMDAwKSIgZmlsbD0iIzI5MjY3NiIgZmlsbC1ydWxlPSJub256ZXJvIj4gICAgICAgICAgICA8ZyBpZD0iaWNfYXJyb3dfZm9yd2FyZF8yNHB4Ij4gICAgICAgICAgICAgICAgPHBvbHlnb24gaWQ9IlNoYXBlIiBwb2ludHM9IjEyIDQgMTAuNTkgNS40MSAxNi4xNyAxMSA0IDExIDQgMTMgMTYuMTcgMTMgMTAuNTkgMTguNTkgMTIgMjAgMjAgMTIiPjwvcG9seWdvbj4gICAgICAgICAgICA8L2c+ICAgICAgICA8L2c+ICAgIDwvZz48L3N2Zz4=);
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1rem;
+        height: 1rem;
+        margin-right: 1rem;
+    }
+    &:hover {
+        animation-name: "animationC";
+        animation-duration: .4s;
+        animation-timing-function: ease;
+        box-shadow: 0 12px 8px -8px rgba(0,0,0,0.3);
+        animation-fill-mode: forwards;
+        @keyframes animationC {
+            from {
+                padding: 1rem 2.4rem 1rem 1rem;
+            }
+            to {
+                padding: 1rem 3rem 1rem 1rem;
+            }
+        }
+    }
+}

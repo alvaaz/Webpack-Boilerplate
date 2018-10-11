@@ -2,7 +2,7 @@ import gql from 'graphql-tag'
 import ApolloClient from 'apollo-boost';
 
 const client = new ApolloClient({
-    // uri: 'https://api-useast.graphcms.com/v1/cjn39wlms2lf301g5rhj19k0s/master'
+    uri: 'https://api-useast.graphcms.com/v1/cjn39wlms2lf301g5rhj19k0s/master'
 })
 
 import './style.scss'

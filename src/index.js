@@ -17,7 +17,7 @@ client.query({
         title
         categories
         images {
-            handle
+          handle
         }
         coverImage {
           handle
@@ -53,8 +53,6 @@ function tabla(datos) {
 const menu = document.getElementById("menu"),
     header = document.querySelector('header')
 
-document.querySelector('.menu-toggle').addEventListener('click', function(){
-  menu.classList.toggle("is-open")
+document.querySelector('.a-hamburgerMenu').addEventListener('click', function(){
   header.classList.toggle('menu-is-open')
-
 })

@@ -1,0 +1,133 @@
+.a-scrollDown {
+    position: relative;
+    transition: all 0.3s ease;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 20px;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    box-sizing: content-box;
+    &:hover {
+        opacity: 0.45;
+    }
+    &__icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 1.5px solid #000000;
+        width: 12px;
+        height: 18px;
+        border-radius: 8px;border-color: #ffffff;
+        transition: all 0.3s ease;
+        &:after {
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: 4.5px;
+            width: 3px;
+            height: 3px;
+            border-radius: 6px;
+            background: #ffffff;;
+            animation: scrollDownAnim 1.8s infinite ease;
+        }
+    }
+    &__text {
+        padding-left: 25px;
+    }
+}
+
+
+@keyframes scrollDownAnim {
+    40% {
+        top: 5px;
+    }
+    75% {
+        top: 10px;
+    }
+    100% {
+        top: 5px;
+    }
+}
+
+
+
+.a-hamburgerMenu {
+    width: 24px;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 1502;
+    margin-left: 35px;
+    %bread {
+        content: "";
+        height: 2px;
+        background: white;
+        position: absolute;
+        border-radius: 2px;
+        right: 0;
+        transition: all 0.3s, margin 0.3s ease 0.3s, transform 0.3s ease, background 0.05s ease 0.27s;
+        transition-timing-function: cubic-bezier(0.6, 0, 0.2, 1);
+    }
+    &__bread {
+        @extend %bread;
+        margin-top: -1.5px;
+        top: 50%;
+        width: 100%;
+    }
+    &__bread:after {
+        @extend %bread;
+        margin-top: 7px;
+        top: 0;
+        width: 50%;
+    }
+    &__bread:before {
+        @extend %bread;
+        margin-top: -7px;
+        top: 0;
+        width: 80%;
+    }
+    &:hover {
+        .a-hamburgerMenu__bread:before,
+        .a-hamburgerMenu__bread:after {
+            width: 100%;
+        }
+    }
+}
+
+.menu-is-open {
+    .a-hamburgerMenu__bread:before,
+    .a-hamburgerMenu__bread:after {
+        transition: margin 0.3s, transform 0.3s ease 0.3s, background 0.3s ease 0.2s;
+        transition-timing-function: cubic-bezier(0.6, 0, 0.2, 1);
+        margin: 0;
+        width: 100%;
+        transform: rotate(135deg);
+        background: black;
+    }
+    .a-hamburgerMenu__bread:after {
+        transform: rotate(-135deg);
+    }
+    .a-hamburgerMenu__bread {
+        background: transparent;
+    }
+    // Logo dissapear when menu is open
+    @media only screen and (max-width: 768px){
+        .a-headerLogo {
+            opacity: 0;
+            visibility: hidden;
+            transition-delay: 0s;
+            transition-duration: 0.3s;
+        }
+    }
+}
+
+.a-headerLogo {
+    img {
+        width: 4em;
+        height: auto;
+    }
+    transition: all 0.4s ease 0.7s;
+}
+

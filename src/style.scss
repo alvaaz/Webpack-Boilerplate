@@ -1,6 +1,54 @@
+@import "scss/atoms";
 @import "scss/base";
 @import "scss/variables";
 @import "scss/projects";
 @import "scss/header";
 @import "scss/typography";
-@import "scss/menu";
+
+
+.partners__brand {
+    background: #4FE2C0;
+    padding-left: 4vw;
+    border-radius: 0 20px 20px 0;
+    position: relative;
+    top: -50px;
+    img {
+        height: 500px;
+    }
+}
+
+.partners__desc {
+    padding-top: 80px;
+    padding-left: 40px;
+    color: black;
+    h1 {
+        font-family: "Overpass Mono";
+        font-size: 1.6rem;
+        width: 34rem;
+        line-height: 42px;
+    }
+    p {
+        padding-top: 2rem;
+        font-size: 1.4rem;
+    }
+
+}
+
+.partners__header {
+    display: flex;
+    padding-right: 4vw;
+}
+
+.main__partners {
+    background: #FAFAFA;
+    color: white
+}
+
+.partners__clients {
+    padding-top: 4rem;
+    text-align: center;
+    img {
+        filter:brightness(0%);
+        padding-top: 2rem;
+    }
+}

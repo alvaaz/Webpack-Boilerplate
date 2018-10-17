@@ -1,20 +1,107 @@
-extends includes/_skeleton
-
-block header
-  include includes/_header
-
-block content
-  main.main
-    h2.main__title Echa un vistazo
-        span.main__light a nuestros proyectos
-    section.main__projects
-    section.main__partners(style="display: flex;background: black; color: white")
-      .partners__brand
-        img(style="width: 350px" src="http://www.labs.jumpitt.com/images/logo-sable-group.png", alt="")
-      .partners__desc
-        h1 Jumpitt es una unidad estratégica de negocio del Grupo Sable.
-        p Grupo Sable apuesta a crear valor bajo unidades de negocio autónomas, articuladas por una estrategia común. Se dedica a descubrir, desarrollar y operar emprendimientos innovadores en diferentes industrias, promoviendo la colaboración y sinergia entre sus unidades de negocios así como la búsqueda de alianzas estratégicas con otras entidades. Su desafío radica en emprender, aportar valor, desarrollar, hacer empresa, y trabajar con el objetivo de dejar una huella positiva desde un prisma joven e innovador.
-        p
-          img(src="http://www.labs.jumpitt.com/images/logos01.png", alt="")
-        p
-          img(src="http://www.labs.jumpitt.com/images/logos01.png", alt="")
+doctype html
+html
+  head
+    link(href="https://fonts.googleapis.com/css?family=Overpass:100,300,400,600,700,800" rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css?family=Overpass+Mono:300,700" rel="stylesheet")
+    title Jumpittlabs
+  body
+    div.page-content
+      header.header
+        nav.header__nav
+          a.a-headerLogo(href="")
+            img(src="./img/logo.svg" alt="Jumpitt Labs")
+          .a-hamburgerMenu
+            span.a-hamburgerMenu__bread
+          .nav__menu
+            nav.menu__nav
+              a.menu__nav-item(href="") Nosotros
+              a.menu__nav-item(href="") Proyectos
+              a.menu__nav-item(href="") Qué hacemos
+              a.menu__nav-item(href="") Contáctanos
+      main.main
+        .main__header
+          h1.header__title
+            span we
+            br
+            | think
+            br
+            b
+              i different
+          p.header__subtitle Somos un centro de innovación móvil ubicado en Valparaíso, Chile.
+          a.a-scrollDown(href='#')
+            span.a-scrollDown__icon
+            span.a-scrollDown__text Desliza hacia abajo
+        h2.main__title Echa un vistazo
+            span.main__light a nuestros proyectos
+        .main__body.main__projects
+        section.main__partners
+          .partners__header
+            .partners__brand
+              img(src="http://www.labs.jumpitt.com/images/logo-sable-group.png", alt="")
+            .partners__desc
+              h1 Jumpitt es una unidad estratégica de negocio del Grupo Sable.
+              p Grupo Sable apuesta a crear valor bajo unidades de negocio autónomas, articuladas por una estrategia común. Se dedica a descubrir, desarrollar y operar emprendimientos innovadores en diferentes industrias, promoviendo la colaboración y sinergia entre sus unidades de negocios así como la búsqueda de alianzas estratégicas con otras entidades. Su desafío radica en emprender, aportar valor, desarrollar, hacer empresa, y trabajar con el objetivo de dejar una huella positiva desde un prisma joven e innovador.
+          .partners__clients
+            img(src="http://www.labs.jumpitt.com/images/logos01.png", alt="")
+            img(src="http://www.labs.jumpitt.com/images/logos02.png", alt="")
+            img(src="http://www.labs.jumpitt.com/images/logos03.png", alt="")
+            img(src="http://www.labs.jumpitt.com/images/logos04.png", alt="")
+      footer(style="display: flex;justify-content: space-between;padding: 52px 4vw;")
+        a(href="#")
+          img(style="width: 140px", src="http://labs.jumpitt.com/images/jumpittlogo.png", alt="")
+        div(style="display: flex;align-items: center;")
+          a._3MSMklDyvf2wrytE._1sjVykEvi1._38pdsE8-wn._1yBsMS6en6(href='/privacy')
+            span._3-tvJnhczYfjBiO_
+              svg.T_nc9ESBNvw74eq_(data-type='arrow', width='6px', height='10px', viewBox='0 0 6 10')
+                path(fill-rule='evenodd', opacity='0.502', fill='rgb(255, 255, 255)', d='M5.284,5.000 L1.000,9.285 L0.293,8.578 L3.870,5.000 L0.293,1.423 L1.000,0.716 L4.577,4.293 L4.577,4.293 L5.284,5.000 Z')
+              span._1-T7Lnicbviel2XX
+                span._34SlfwlJIsAfchoe
+                span._2EdDhvRB_5tf26wE Privacy
+          a.mpGIm6ZO6p(title='Dribbble', href='https://dribbble.com/ueno', target='_blank')
+            svg(height='18px', width='19px', version='1.1', viewBox='0 0 19 18')
+              defs
+              g#Good-One(fill='none', stroke='none', stroke-width='1')
+                g#Footer_06(fill='#9EA0A6', transform='translate(-1141.000000, -3946.000000)')
+                  g#Group-7(transform='translate(0.000000, 3204.000000)')
+                    g#Group-6(transform='translate(75.000000, 733.000000)')
+                      g#dribbble(transform='translate(976.000000, 9.000000)')
+                        path#Shape(d='M103.121936,14.778 C102.743936,13.05 102.293936,11.457 101.843936,10.053 C102.293936,9.99 102.743936,9.954 103.265936,9.954 L103.283936,9.954 C104.120936,9.954 105.038936,10.062 106.037936,10.287 C105.695936,12.15 104.615936,13.743 103.121936,14.778 Z M99.1439356,16.02 C97.5779356,16.02 96.1379356,15.507 94.9679356,14.634 C95.2199356,14.229 95.7509356,13.446 96.6059356,12.636 C97.4699356,11.799 98.6939356,10.935 100.250936,10.422 C100.781936,11.925 101.267936,13.635 101.636936,15.561 C100.862936,15.858 100.043936,16.02 99.1439356,16.02 Z M92.1239356,9 C92.1239356,8.964 92.1239356,8.937 92.1239356,8.901 C92.3219356,8.91 92.5829356,8.91 92.8889356,8.91 L92.8979356,8.91 C94.3019356,8.901 96.7679356,8.784 99.2699356,8.001 C99.4049356,8.298 99.5399356,8.604 99.6749356,8.928 C98.0009356,9.486 96.6869356,10.377 95.7149356,11.25 C94.7879356,12.114 94.1489356,12.951 93.7799356,13.5 C92.7539356,12.294 92.1239356,10.719 92.1239356,9 Z M96.0389356,2.7 C96.5339356,3.285 97.5059356,4.554 98.5499356,6.525 C96.4439356,7.164 94.2929356,7.308 93.0059356,7.308 C92.9699356,7.308 92.9339356,7.308 92.8979356,7.308 L92.8889356,7.308 C92.6729356,7.308 92.4839356,7.308 92.3309356,7.299 C92.8439356,5.283 94.1939356,3.6 96.0389356,2.7 Z M99.1439356,1.98 C100.799936,1.98 102.320936,2.556 103.517936,3.519 C102.599936,4.626 101.393936,5.4 100.070936,5.985 C99.1439356,4.203 98.2439356,2.925 97.6499356,2.142 C98.1359356,2.043 98.6309356,1.98 99.1439356,1.98 Z M104.660936,4.662 C105.533936,5.778 106.082936,7.164 106.154936,8.667 C105.137936,8.451 104.183936,8.352 103.283936,8.352 L103.274936,8.352 C102.554936,8.352 101.879936,8.415 101.240936,8.523 C101.087936,8.145 100.943936,7.785 100.772936,7.434 C102.194936,6.813 103.553936,5.922 104.660936,4.662 Z M99.1439356,3.99680289e-16 C94.1733728,-1.59872116e-15 90.1439356,4.02943725 90.1439356,9 C90.1439356,11.3869484 91.0921471,13.6761336 92.7799746,15.363961 C94.467802,17.0517884 96.7569872,18 99.1439356,18 C101.530884,18 103.820069,17.0517884 105.507897,15.363961 C107.195724,13.6761336 108.143936,11.3869484 108.143936,9 C108.143936,6.61305159 107.195724,4.32386638 105.507897,2.63603897 C103.820069,0.948211563 101.530884,1.99840144e-16 99.1439356,3.99680289e-16 Z')
+          a.mpGIm6ZO6p(title='Twitter', href='https://twitter.com/uenodotco', target='_blank')
+            svg(height='15px', width='20px', version='1.1', viewBox='0 0 20 15')
+              defs
+              g#Good-One(fill='none', stroke='none', stroke-width='1')
+                g#Footer_06(fill='#9EA0A6', transform='translate(-1091.000000, -3948.000000)')
+                  g#Group-7(transform='translate(0.000000, 3204.000000)')
+                    g#Group-6(transform='translate(75.000000, 733.000000)')
+                      g#dribbble(transform='translate(976.000000, 9.000000)')
+                        path#Fill-1(d='M53.2813915,2 C51.0959361,2 49.3247358,3.69382235 49.3247358,5.78774534 C49.3247358,6.08310267 49.3596502,6.37374182 49.4275918,6.64928284 C46.1380851,6.48980876 43.2222572,4.98471314 41.2708228,2.68885254 C40.9301711,3.25031454 40.7357826,3.90142174 40.7357826,4.59593608 C40.7357826,5.91041772 41.4331278,7.07014343 42.4956593,7.74672874 C41.8464394,7.72974333 41.236852,7.55800201 40.7027554,7.27396829 C40.7027554,7.29001007 40.7027554,7.30605184 40.7027554,7.32303724 C40.7027554,9.157461 42.066306,10.6880347 43.8771389,11.0362355 C43.5449799,11.1221062 43.1958354,11.1692879 42.8344238,11.1692879 C42.5796427,11.1692879 42.331467,11.1447534 42.0898968,11.1032335 C42.5937972,12.603611 44.0554857,13.7038878 45.7870533,13.7331404 C44.4319955,14.7447157 42.7259059,15.3552466 40.8726095,15.3552466 C40.5527177,15.3552466 40.237544,15.3344867 39.9280322,15.3014595 C41.6794162,16.3753145 43.7591847,17 45.9937091,17 C53.2719552,17 57.2522018,11.2287368 57.2522018,6.22464771 C57.2522018,6.06328636 57.2484273,5.89720684 57.2408782,5.73490186 C58.0146578,5.20080523 58.6855813,4.53648717 59.2159034,3.7768621 C58.5062909,4.07505033 57.7438349,4.27887519 56.9436336,4.37135128 C57.7598767,3.90142174 58.3873931,3.16066935 58.6827504,2.27648465 C57.9184071,2.70961248 57.0710242,3.02478611 56.1707977,3.19369653 C55.4479743,2.45954957 54.4203573,2 53.2813915,2')
+          a.mpGIm6ZO6p(title='Github', href='https://github.com/ueno-llc', target='_blank')
+            svg(height='17px', width='18px', version='1.1', viewBox='0 0 18 17')
+              defs
+              g#Good-One(fill='none', stroke='none', stroke-width='1')
+                g#Footer_06(fill='#9EA0A6', transform='translate(-1238.000000, -3947.000000)')
+                  g#Group-7(transform='translate(0.000000, 3204.000000)')
+                    g#Group-6(transform='translate(75.000000, 733.000000)')
+                      g#dribbble(transform='translate(976.000000, 9.000000)')
+                        path#Shape(d='M195.711029,1 C190.900061,1 187,4.90006063 187,9.71102924 C187,13.5613042 189.500065,16.8279401 192.958344,17.986507 C193.393895,18.0561953 193.533272,17.7861533 193.533272,17.5509556 C193.533272,17.3506019 193.533272,16.801807 193.533272,16.0787916 C191.120317,16.6014534 190.606366,14.9115137 190.606366,14.9115137 C190.205659,13.9010343 189.639442,13.6309924 189.639442,13.6309924 C188.846738,13.0909086 189.700419,13.1083306 189.700419,13.1083306 C190.571522,13.1693078 191.033207,14.0055667 191.033207,14.0055667 C191.791066,15.3296431 193.071587,14.9376468 193.568116,14.7285821 C193.646515,14.1623652 193.873002,13.7790799 194.116911,13.5613042 C192.183062,13.3435284 190.153393,12.5943799 190.153393,9.27547778 C190.153393,8.30855353 190.484412,7.53327193 191.050629,6.91478885 C190.963518,6.69701312 190.658632,5.79106608 191.137739,4.61507713 C191.137739,4.61507713 191.869465,4.37987934 193.533272,5.50360212 C194.221443,5.31195947 194.970592,5.21613815 195.711029,5.21613815 C196.451467,5.21613815 197.200615,5.31195947 197.888787,5.50360212 C199.552593,4.37987934 200.28432,4.61507713 200.28432,4.61507713 C200.763426,5.79106608 200.45854,6.69701312 200.37143,6.91478885 C200.937647,7.53327193 201.268666,8.30855353 201.268666,9.27547778 C201.268666,12.6030909 199.230285,13.3348174 197.287726,13.5525931 C197.601323,13.822635 197.888787,14.3540078 197.888787,15.1641335 C197.888787,16.3314115 197.888787,17.2722026 197.888787,17.5509556 C197.888787,17.7861533 198.028163,18.0649063 198.472426,17.986507 C201.930704,16.8192291 204.422058,13.5613042 204.422058,9.71102924 C204.422058,7.40072064 203.504292,5.18503627 201.870657,3.55140139 C200.237022,1.91776652 198.021338,1 195.711029,1 Z')
+          a.mpGIm6ZO6p(title='Instagram', href='https://www.instagram.com/uenodotco', target='_blank')
+            svg(height='18px', width='18px', version='1.1', viewBox='0 0 18 18')
+              defs
+              g#Good-One(fill='none', stroke='none', stroke-width='1')
+                g#Footer_06(fill='#9EA0A6', transform='translate(-1190.000000, -3946.000000)')
+                  g#Group-7(transform='translate(0.000000, 3204.000000)')
+                    g#Group-6(transform='translate(75.000000, 733.000000)')
+                      g#dribbble(transform='translate(976.000000, 9.000000)')
+                        path#Shape(d='M144.22,0 L151.78,0 C154.66,0 157,2.34 157,5.22 L157,12.78 C157,15.6629264 154.662926,18 151.78,18 L144.22,18 C141.34,18 139,15.66 139,12.78 L139,5.22 C139,2.33707361 141.337074,7.99360578e-16 144.22,0 Z M144.04,1.8 C142.250597,1.8 140.8,3.25059741 140.8,5.04 L140.8,12.96 C140.8,14.751 142.249,16.2 144.04,16.2 L151.96,16.2 C153.749403,16.2 155.2,14.7494026 155.2,12.96 L155.2,5.04 C155.2,3.249 153.751,1.8 151.96,1.8 L144.04,1.8 Z M152.725,3.15 C153.34632,3.15 153.85,3.65367966 153.85,4.275 C153.85,4.89632034 153.34632,5.4 152.725,5.4 C152.10368,5.4 151.6,4.89632034 151.6,4.275 C151.6,3.65367966 152.10368,3.15 152.725,3.15 Z M148,4.5 C150.485281,4.5 152.5,6.51471863 152.5,9 C152.5,11.4852814 150.485281,13.5 148,13.5 C145.514719,13.5 143.5,11.4852814 143.5,9 C143.5,6.51471863 145.514719,4.5 148,4.5 Z M148,6.3 C146.508831,6.3 145.3,7.50883118 145.3,9 C145.3,10.4911688 146.508831,11.7 148,11.7 C149.491169,11.7 150.7,10.4911688 150.7,9 C150.7,7.50883118 149.491169,6.3 148,6.3 Z')
+          a.mpGIm6ZO6p(title='Facebook', href='https://www.facebook.com/uenodotco/', target='_blank')
+            svg(height='18px', width='9px', version='1.1', viewBox='0 0 9 18')
+              defs
+              g#Good-One(fill='none', stroke='none', stroke-width='1')
+                g#Footer_06(fill='#9EA0A6', transform='translate(-1051.000000, -3946.000000)')
+                  g#Group-7(transform='translate(0.000000, 3204.000000)')
+                    g#Group-6(transform='translate(75.000000, 733.000000)')
+                      g#dribbble(transform='translate(976.000000, 9.000000)')
+                        path#Shape(d='M9,0 L9,3.6 L7.2,3.6 C6.579,3.6 6.3,4.329 6.3,4.95 L6.3,7.2 L9,7.2 L9,10.8 L6.3,10.8 L6.3,18 L2.7,18 L2.7,10.8 L0,10.8 L0,7.2 L2.7,7.2 L2.7,3.6 C2.7,1.6117749 4.3117749,3.99680289e-16 6.3,0 L9,0 Z')
+          a.mpGIm6ZO6p(title='LinkedIn', href='https://www.linkedin.com/company/ueno-/', target='_blank')
+            svg(height='18', width='18', viewBox='0 0 18 18')
+              path(d='M18 18h-4v-6.75c0-1.06-1.19-1.94-2.25-1.94S10 10.19 10 11.25V18H6V6h4v2c.66-1.07 2.36-1.76 3.5-1.76 2.5 0 4.5 2.04 4.5 4.51V18zM4 18H0V6h4v12zM2 0a2 2 0 1 1 0 4 2 2 0 0 1 0-4z', fill='#9EA0A6')

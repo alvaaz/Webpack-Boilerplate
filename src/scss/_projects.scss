@@ -1,4 +1,22 @@
 
+
+
+
+
+.main__header {
+    height: 100vh;
+    background: $dark-blue url("./img/parallaxbg.svg") repeat scroll center center / cover;
+    position: relative;
+    top: -124px;
+    padding-left: 4vw;
+    padding-right: 4vw;
+    padding-top: 20vh;
+    color: white;
+}
+
+
+
+
 .project__description {
     display: none;
     @media screen and (min-width: 40em) {
@@ -7,7 +25,9 @@
 }
 
 .main {
-    padding-top: 8vh;
+    position: relative;
+    right: 0;
+    transition: left 599ms cubic-bezier(0.4, 0.4, 0, 1), right 599ms cubic-bezier(0.4, 0.4, 0, 1);
     background-color: white;
     &__title {
         margin-bottom: 2.2em;
@@ -16,20 +36,13 @@
         display: block;
     }
     &__projects {
-        padding-left: 4vw;
-        padding-right: 4vw;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-column-gap: 4vw;
-        align-items: center;
-        @media screen and (min-width: 40em){
-            grid-column-gap: 40px;
-            padding-left: 16vw;
-            padding-right: 16vw;
-        }
         &--article {
             margin: 0 0 2rem;
             text-align: center;
+            justify-self: center;
             @media screen and (min-width: 40em){
                 margin: 0 0 8rem;
                 text-align: left;
@@ -56,21 +69,14 @@
         border-radius: .4rem;
         overflow: hidden;
         max-width: 28vw;
-        transition: transform .5s ease-in-out;
+        transition: all .5s ease-in-out;
         cursor: pointer;
         transform: matrix(1.1, 0, 0, 1.1, 0, 0);
         @media screen and (min-width: 40em) {
             border-radius: 1rem;
             margin-bottom: 2rem;
         }
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transform: matrix(1, 0, 0, 1, 0, 0);
-            transition: transform .5s ease-in-out;
-        }
-        video {
+        img, video {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -88,4 +94,9 @@
             }
         }
     }
+}
+
+.menu-is-open ~ .main {
+    right: 350px;
+    transition-delay: 0.06s;
 }

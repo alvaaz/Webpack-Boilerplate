@@ -1,13 +1,6 @@
 .header {
-    margin-right: auto;
-    margin-left: auto;
-    height: 88vh;
-    background: $dark-blue url("./img/parallaxbg.svg") repeat scroll center center / cover;
-    @media screen and (min-width: 40em) {
-        height: 86vh;
-        padding-right: 4vw;
-        padding-left: 4vw;
-    }
+    padding-right: 4vw;
+    padding-left: 4vw;
     &__nav {
         position: relative;
         z-index: 13;
@@ -15,30 +8,8 @@
         justify-content: space-between;
         padding-top: 8vh;
     }
-    &__hero {
-        padding-top: 8vh;
-        background-color: $dark-blue;
-        @media screen and (min-width: 40em) {
-            padding-top: 8vh;
-        }
-    }
-    &__scroll {
-        width: 1.5rem;
-        height: 3rem;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        @media screen and (min-width: 40em){
-            width: 2rem;
-            height: 4rem;
-        }
-    }
     &__title {
         width: 50vw;
-    }
-    &__logo {
-        width: 4em;
-        height: auto;
     }
     &__subtitle {
         padding-top: 4vh;
@@ -50,53 +21,79 @@
     }
 }
 
-#scrolldown {
-    position: relative;
-    transition: all 0.3s ease;
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 20px;
-    color: white;
-    text-decoration: none;
-    display: inline-block;
-    box-sizing: content-box;
-    &:hover {
-        opacity: 0.45;
+.nav__menu {
+    position: fixed;
+    top: 0;
+    right: -150px;
+    z-index: 1501;
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    padding-right: 4vw;
+    transition: all 0.599s ease, right 599ms cubic-bezier(0.4, 0.4, 0, 1);
+    .menu__nav {
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+        padding-top: 8rem;
+        margin-bottom: 2rem;
     }
-    .scroll-icon{
-        position: absolute;
-        top: 0;
-        left: 0;
-        border: 1.5px solid #000000;
-        width: 12px;
-        height: 18px;
-        border-radius: 8px;border-color: #ffffff;
-        transition: all 0.3s ease;
+    .menu__nav-item {
+        transition: all 499ms cubic-bezier(0.4, 0.1, 0, 1);
+        transform: translateY(45px);
+        opacity: 0;
+        visibility: hidden;
+        text-align: right;
+        margin-bottom: 1rem;
+        position: relative;
         &:after {
             content: "";
             position: absolute;
-            top: 5px;
-            left: 4.5px;
-            width: 3px;
-            height: 3px;
-            border-radius: 6px;
-            background: #ffffff;;
-            animation: scrolldown-anim 1.8s infinite ease;
+            bottom: 0px;
+            left: 0px;
+            width: 0%;
+            height: 2px;
+            background: rgba(0, 0, 0, 0.26);
+            transition: all 0.3s ease;
+        }
+        &:hover:after {
+            width: 100%;
         }
     }
 }
 
-#scrolldown:not(.center) .scroll-icon + span.text {
-    padding-left: 25px;
+
+.header .menu-is-open {
+    right: 350px;
+    transition-delay: 0.06s;
 }
 
 
-@keyframes scrolldown-anim {
-    40% {
-        top: 5px; }
-    75% {
-        top: 10px; }
-    100% {
-        top: 5px; }
+.menu-is-open {
+    //Menu nav
+    .nav__menu {
+        right: 0px;
+        opacity: 1;
+        visibility: visible;
+        transition: all 0.115s ease, right 599ms cubic-bezier(0.4, 0.4, 0, 1);
+    }
+    .menu__nav-item{
+        transform: translateY(0%);
+        opacity: 1;
+        visibility: visible;
+        transition: all 799ms cubic-bezier(0.4, 0.1, 0, 1);
+        &:nth-child(1){
+            transition-delay: 0s;
+        }
+        &:nth-child(2){
+            transition-delay: 0.05s;
+        }
+        &:nth-child(3){
+            transition-delay: 0.1s;
+        }
+        &:nth-child(4){
+            transition-delay: 0.15s;
+        }
+    }
 }
 
